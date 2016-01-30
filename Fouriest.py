@@ -8,8 +8,9 @@ def fft(i):
     while n:
       f+=((n%b)==4)
       n/=b
-    a.append([f,b])
-  return [i+5 for i, j in enumerate(a) if j[0] == (sorted(a,reverse=True)[0][0]) and j[0] != 0]
+    if f>0:
+      a.append([f,b])
+  return [j[1] for i, j in enumerate(a) if j[0] == (sorted(a,reverse=True)[0][0]) and j[0] != 0]
 
 
 for x in range(0,100):
